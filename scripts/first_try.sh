@@ -42,21 +42,21 @@ fi
 
 #build binary from source code
 $INDIR/scripts/build.sh >>$LOGFILE
-if [ ! $? -eq 0 && locres -eq 0 ]; then
+if [ ! $? -eq 0 ] && [ locres -eq 0 ]; then
     echo "Fatal error: build failed"
     locres=1
 fi
 
 #deploy binary
 $INDIR/scripts/deploy.sh >>$LOGFILE
-if [ ! $? -eq 0 && locres -eq 0 ]; then
+if [ ! $? -eq 0 ] && [ locres -eq 0 ]; then
     echo "Fatal error: deploy failed"
     locres=1
 fi
 
 #test binary
 $INDIR/scripts/test.sh >>$LOGFILE
-if [ ! $? -eq 0 && locres -eq 0 ]; then
+if [ ! $? -eq 0 ] && [ locres -eq 0 ]; then
     echo "Fatal error: test failed"
     locres=1
 fi
