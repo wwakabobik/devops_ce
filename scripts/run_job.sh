@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check_for_commits.sh
+$HOME/devops_ce/scripts/check_for_commits.sh
 if [ ! $? = 0 ]; then
-    first_try.sh
+    $HOME/devops_ce/scripts/first_try.sh
 fi
