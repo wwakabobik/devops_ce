@@ -56,7 +56,7 @@ public class testengine {
                 break;
             case 1:
                 // Chrome
-                //TestCapability = DesiredCapabilities.chrome();
+                TestCapability = DesiredCapabilities.chrome();
                 setOSCapability(OSType);
                 //TestCapability.setCapability("browserName", "chrome");
                 //TestCapability.setCapability("name", "Chrome 60");
@@ -68,7 +68,7 @@ public class testengine {
                 break;
             case 2:
                 // Internet Explorer
-                //TestCapability = DesiredCapabilities.chrome();
+                TestCapability = DesiredCapabilities.internetExplorer();
                 setOSCapability(OSType);
                 //TestCapability.setCapability("browserName", "internet explorer");
                 //TestCapability.setCapability("name", "Internet Explorer 11");

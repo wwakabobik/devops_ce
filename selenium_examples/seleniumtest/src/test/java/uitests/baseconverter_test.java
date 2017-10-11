@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.*;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,12 +29,21 @@ public class baseconverter_test {
     private static int browserType;                 // browser type test parameter
     private static int OSType;                      // OS type test parameter
 
+    // Constructor for test class, should be exactly one for JUnit test set
+    // therefore one of them (see bellow) commented-out
+
     // default constructor, sets parameters for test suite
     public baseconverter_test(int browserType)
     {
         this.browserType = browserType; // depends on param
-        this.OSType = 0;                // Linux, hardcoded
+        this.OSType = 1;                // Windows, hardcoded
     }
+
+    /*public baseconverter_test()
+    {
+        this.browserType = 1;           // Chrome, hardcoded
+        this.OSType = 1;                // Windows, hardcoded
+    }*/
 
     // initialize test environment: test driver depends on params, point test page objects to driver, point utils to driver
     public static void initTestframework(int browserType, int OSType)
@@ -66,7 +77,6 @@ public class baseconverter_test {
             System.err.println("Exception " + e.toString());
         }
         driver.close();
-
     }
 
     // close browser instance
@@ -77,8 +87,9 @@ public class baseconverter_test {
     }
 
     /* ------- Tests -------------------------------------------------------------------------------------------------*/
-
     @Test
+    @Features("Selenium_Test")
+    @Stories("219 Hex2Dec")
     public void testHexToDec()
     {
         String expected, actual;
@@ -93,6 +104,8 @@ public class baseconverter_test {
     }
 
     @Test
+    @Features("Selenium_Test")
+    @Stories("220 Hex2Oct")
     public void testHexToOct()
     {
         String expected, actual;
@@ -107,6 +120,8 @@ public class baseconverter_test {
     }
 
     @Test
+    @Features("Selenium_Test")
+    @Stories("221 Hex2Bin")
     public void testHexToBin()
     {
         String expected, actual;
@@ -121,6 +136,8 @@ public class baseconverter_test {
     }
 
     @Test
+    @Features("Selenium_Test")
+    @Stories("222 Hex2Hex")
     public void testHexToHex()
     {
         String expected, actual;
